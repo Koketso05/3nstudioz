@@ -1,0 +1,68 @@
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="hero-content">
+    <h1>Client Testimonials</h1>
+    <p>See what our happy clients are saying about their experience with 3NStudioz</p>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section testimonials-main">
+  <div class="container">
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <!-- Header with Avatar -->
+        <div class="testimonial-header">
+          <img [src]="testimonial.image" [alt]="testimonial.name" class="avatar">
+          <div class="header-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p class="service">{{ testimonial.service }}</p>
+            <div class="rating" *ngIf="testimonial.rating">
+              <span class="star" *ngFor="let star of getStarArray(testimonial.rating)">★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="testimonial-quote">
+          "{{ testimonial.quote }}"
+        </blockquote>
+
+        <!-- Decorative Elements -->
+        <div class="quote-decoration">❝ ❞</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section stats-testimonials">
+  <div class="container">
+    <div class="stats-content">
+      <div class="stat">
+        <div class="stat-number">4.9/5</div>
+        <div class="stat-label">Average Rating</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Satisfied Clients</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Would Recommend</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section testimonials-cta">
+  <div class="container">
+    <h2>Ready to Create Your Story?</h2>
+    <p>Join our list of satisfied clients. Let's capture your special moments together.</p>
+    <div class="cta-buttons">
+      <a href="#contact" class="btn btn-primary">Book Now</a>
+      <a href="https://wa.me/27731234567" target="_blank" class="btn btn-secondary">WhatsApp</a>
+    </div>
+  </div>
+</section>

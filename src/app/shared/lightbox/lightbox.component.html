@@ -1,0 +1,33 @@
+<div class="lightbox-overlay" *ngIf="isOpen" @fadeInOut (click)="onBackdropClick()" (keydown)="onKeyDown($event)">
+  <div class="lightbox-container" @slideIn (click)="$event.stopPropagation()">
+    <!-- Close Button -->
+    <button class="lightbox-close" (click)="onBackdropClick()" title="Close (Esc)">
+      <span>&times;</span>
+    </button>
+
+    <!-- Image -->
+    <div class="lightbox-content">
+      <img [src]="imageUrl" [alt]="imageTitle" class="lightbox-image">
+    </div>
+
+    <!-- Title -->
+    <div class="lightbox-title" *ngIf="imageTitle">
+      {{ imageTitle }}
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="lightbox-nav lightbox-prev" (click)="onPrevious($event)" 
+            *ngIf="currentIndex > 0" title="Previous (←)">
+      <span>&larr;</span>
+    </button>
+    <button class="lightbox-nav lightbox-next" (click)="onNext($event)" 
+            *ngIf="currentIndex < totalImages - 1" title="Next (→)">
+      <span>&rarr;</span>
+    </button>
+
+    <!-- Counter -->
+    <div class="lightbox-counter" *ngIf="totalImages > 0">
+      {{ currentIndex + 1 }} / {{ totalImages }}
+    </div>
+  </div>
+</div>

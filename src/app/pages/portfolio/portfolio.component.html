@@ -1,0 +1,68 @@
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="hero-content">
+    <h1>Our Portfolio</h1>
+    <p>Explore our diverse collection of stunning moments captured across all categories</p>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="section portfolio-section">
+  <div class="container">
+    <!-- Category Filter -->
+    <div class="category-filter">
+      <button class="filter-btn"
+              [class.active]="selectedCategory() === 'all'"
+              (click)="filterPortfolios('all')">
+        All
+      </button>
+      <button class="filter-btn"
+              *ngFor="let category of categories"
+              [class.active]="selectedCategory() === category.id"
+              (click)="filterPortfolios(category.id)">
+        {{ category.name }}
+      </button>
+    </div>
+
+    <!-- Portfolio Grid -->
+    <div class="portfolio-grid">
+      <div class="portfolio-item" *ngFor="let item of filteredPortfolios; let i = index">
+        <div class="portfolio-image-wrapper">
+          <img [src]="item.image" [alt]="item.title" class="portfolio-image">
+          <div class="portfolio-overlay" (click)="openLightbox(i)">
+            <div class="overlay-content">
+              <h4>{{ item.title }}</h4>
+              <p class="category-badge">{{ item.category }}</p>
+              <p class="view-btn">View</p>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>{{ item.title }}</h3>
+          <p *ngIf="item.description">{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<app-lightbox
+  [isOpen]="lightboxOpen()"
+  [imageUrl]="filteredPortfolios[currentImageIndex()]?.image"
+  [imageTitle]="filteredPortfolios[currentImageIndex()]?.title"
+  [currentIndex]="currentImageIndex()"
+  [totalImages]="filteredPortfolios.length"
+  (close)="closeLightbox()"
+  (previous)="previousImage()"
+  (next)="nextImage()">
+</app-lightbox>
+
+<!-- CTA Section -->
+<section class="section cta-section">
+  <div class="container">
+    <h2>Love What You See?</h2>
+    <p>Let's capture your special moments together</p>
+    <a href="#contact" class="btn btn-primary">Get Started</a>
+  </div>
+</section>

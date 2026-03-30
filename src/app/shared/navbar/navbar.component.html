@@ -1,0 +1,38 @@
+<nav class="navbar" [class.scrolled]="isScrolled()">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <a routerLink="/" class="logo-text">3NStudioz</a>
+    </div>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-menu" [class.active]="isMobileMenuOpen()">
+      <li class="nav-item">
+        <a routerLink="/" routerLinkActive="active" (click)="closeMobileMenu()" 
+           [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/portfolio" routerLinkActive="active" (click)="closeMobileMenu()">Portfolio</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/about" routerLinkActive="active" (click)="closeMobileMenu()">About</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/testimonials" routerLinkActive="active" (click)="closeMobileMenu()">Testimonials</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/contact" routerLinkActive="active" (click)="closeMobileMenu()" class="cta-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="hamburger" [class.active]="isMobileMenuOpen()" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>

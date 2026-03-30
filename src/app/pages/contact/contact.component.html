@@ -1,0 +1,145 @@
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="hero-content">
+    <h1>Get in Touch</h1>
+    <p>Let's discuss your photography needs</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact-main">
+  <div class="container">
+    <div class="contact-layout">
+      <!-- Contact Form -->
+      <div class="contact-form-wrapper">
+        <h2>Send us a Message</h2>
+
+        <form [formGroup]="form" (ngSubmit)="submitForm()" class="contact-form"
+              *ngIf="!submitSuccess; else successMessage">
+          <!-- Name Field -->
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" [(ngModel)]="form.name"
+                   placeholder="Your name" required>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" [(ngModel)]="form.email"
+                   placeholder="your@email.com" required>
+          </div>
+
+          <!-- Phone Field -->
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" [(ngModel)]="form.phone"
+                   placeholder="+27 (0) XX XXX XXXX" required>
+          </div>
+
+          <!-- Service Selection -->
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service" [(ngModel)]="form.service" required>
+              <option value="">Select a service</option>
+              <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+            </select>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" [(ngModel)]="form.message"
+                      placeholder="Tell us about your project..."
+                      rows="5" required></textarea>
+          </div>
+
+          <!-- Error Message -->
+          <div class="error-message" *ngIf="submitError">
+            {{ errorMessage }}
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary" [disabled]="submitting">
+            {{ submitting ? 'Sending...' : 'Send Message' }}
+          </button>
+        </form>
+
+        <!-- Success Message -->
+        <ng-template #successMessage>
+          <div class="success-message">
+            <h3>✓ Message Sent Successfully</h3>
+            <p>Thank you for reaching out! We'll get back to you soon.</p>
+            <button (click)="submitSuccess = false" class="btn btn-primary">
+              Send Another Message
+            </button>
+          </div>
+        </ng-template>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info-wrapper">
+        <h2>Contact Info</h2>
+
+        <!-- Phone -->
+        <div class="info-card">
+          <div class="info-icon">☎️</div>
+          <div class="info-content">
+            <h4>Phone</h4>
+            <a [href]="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>
+          </div>
+        </div>
+
+        <!-- WhatsApp (VERY important for South Africa) -->
+        <div class="info-card highlight">
+          <div class="info-icon">💬</div>
+          <div class="info-content">
+            <h4>WhatsApp</h4>
+            <p>Quick chat for inquiries and bookings</p>
+            <a [href]="contactInfo.phone | slice:0:-10 | slice:1:''"
+               target="_blank" rel="noopener" class="whatsapp-link">
+              Click to chat on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="info-card">
+          <div class="info-icon">📧</div>
+          <div class="info-content">
+            <h4>Email</h4>
+            <a [href]="'mailto:' + contactInfo.email">{{ contactInfo.email }}</a>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div class="info-content">
+            <h4>Location</h4>
+            <p>{{ contactInfo.location }}</p>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="info-card">
+          <div class="info-icon">🕐</div>
+          <div class="info-content">
+            <h4>Business Hours</h4>
+            <p><strong>Weekdays:</strong> {{ contactInfo.hours.weekdays }}</p>
+            <p><strong>Weekends:</strong> {{ contactInfo.hours.weekends }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-section">
+      <h2>Find Us on the Map</h2>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.0649484699995!2d28.2312!3d-25.7461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e959cbb4b4b4b4b%3A0x4b4b4b4b4b4b4b4b!2sPretoria%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1234567890"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,140 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-background">
+    <!-- Slideshow -->
+    <div class="slideshow">
+      <div class="slide-container" *ngFor="let item of featured; let i = index">
+        <img [src]="item.image" [alt]="item.title" 
+             [class.active]="i === currentSlideIndex"
+             class="slide-image">
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">Capturing Moments</h1>
+      <p class="hero-subtitle">Creating Stories</p>
+      <p class="hero-tagline">– 3NStudioz</p>
+      <p class="hero-description">Professional photography and videography services in Pretoria</p>
+      
+      <div class="hero-buttons">
+        <a routerLink="/portfolio" class="btn btn-primary">View Portfolio</a>
+        <a routerLink="/contact" class="btn btn-secondary">Book a Shoot</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slideshow Controls -->
+  <div class="slideshow-controls">
+    <button class="control-btn prev-btn" (click)="previousSlide()" title="Previous">‹</button>
+    <div class="slide-dots">
+      <button *ngFor="let item of featured; let i = index" 
+              class="dot" 
+              [class.active]="i === currentSlideIndex"
+              (click)="goToSlide(i)"
+              [title]="'Slide ' + (i + 1)"></button>
+    </div>
+    <button class="control-btn next-btn" (click)="nextSlide()" title="Next">›</button>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </div>
+</section>
+
+<!-- Services Overview -->
+<section class="section services-overview">
+  <div class="container">
+    <div class="section-title">
+      <h2>Our <span>Services</span></h2>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-icon">{{ service.icon }}</div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <a routerLink="/services" class="service-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Work -->
+<section class="section featured-work">
+  <div class="container">
+    <div class="section-title">
+      <h2>Featured <span>Work</span></h2>
+      <p class="subtitle">A selection of our finest moments</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let item of featured; let i = index">
+        <div class="gallery-image-wrapper">
+          <img [src]="item.image" [alt]="item.title" class="gallery-image">
+          <div class="gallery-overlay">
+            <div class="overlay-content">
+              <h4>{{ item.title }}</h4>
+              <p class="category-badge">{{ item.category }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <a routerLink="/portfolio" class="btn btn-primary">View Full Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="section testimonials-section" *ngIf="testimonials.length > 0">
+  <div class="container">
+    <div class="section-title">
+      <h2>What Our <span>Clients</span> Say</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card" *ngFor="let testimonial of testimonials">
+        <div class="testimonial-header">
+          <img [src]="testimonial.image" [alt]="testimonial.name" class="testimonial-avatar">
+          <div class="testimonial-info">
+            <h4>{{ testimonial.name }}</h4>
+            <p>{{ testimonial.service }}</p>
+          </div>
+        </div>
+        <p class="testimonial-quote">"{{ testimonial.quote }}"</p>
+        <div class="testimonial-rating" *ngIf="testimonial.rating">
+          <span *ngFor="let star of [1,2,3,4,5]" class="star">★</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <a routerLink="/testimonials" class="btn btn-primary">Read More Testimonials</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Preview Section -->
+<section class="section contact-preview">
+  <div class="container">
+    <div class="contact-preview-content">
+      <div class="contact-text">
+        <h2>Ready to Capture Your Story?</h2>
+        <p>Get in touch with us today to discuss your photography needs and book your session.</p>
+      </div>
+      <div class="contact-actions">
+        <a routerLink="/contact" class="btn btn-primary">Contact Us</a>
+        <a href="https://wa.me/27731234567" target="_blank" class="btn btn-secondary">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+<!-- Hero Section -->
+<section class="page-hero">
+  <div class="hero-content">
+    <h1>About 3NStudioz</h1>
+    <p>Our Story of Excellence in Photography & Videography</p>
+  </div>
+</section>
+
+<!-- Story Section -->
+<section class="section about-story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text">
+        <h2>Our <span>Journey</span></h2>
+        <p>3NStudioz was founded with a simple yet powerful mission: to capture the authentic moments that matter most in people's lives. We believe that every moment tells a story, and our job is to tell your story beautifully.</p>
+        <p>Over the years, we've had the privilege of documenting countless celebrations, milestones, and cherished memories for families and businesses across Pretoria and beyond. Our passion for visual storytelling drives everything we do.</p>
+        <p>Whether it's the nervous excitement before a wedding ceremony, the joy of a family reunion, or the energy of a corporate event, we're there to capture it all with artistry and precision.</p>
+      </div>
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1606011591411-07d1d4a9d50b?w=500&h=500&fit=crop" alt="Behind the scenes">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="section mission-vision">
+  <div class="container">
+    <div class="mv-grid">
+      <div class="mv-card">
+        <h3>Our <span>Mission</span></h3>
+        <p>To deliver world-class photography and videography that exceeds expectations, capturing the essence of your special moments with creativity, professionalism, and genuine passion.</p>
+      </div>
+      <div class="mv-card">
+        <h3>Our <span>Vision</span></h3>
+        <p>To be the most trusted photography and videography service in Pretoria, known for our artistic excellence, innovative approach, and unwavering commitment to client satisfaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" *ngFor="let stat of stats">
+        <div class="stat-number">{{ stat.label }}</div>
+        <div class="stat-label">{{ stat.description }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="section values-section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why Choose <span>3NStudioz</span></h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🎨</div>
+        <h4>Artistic Excellence</h4>
+        <p>We approach every project as an art form, combining technical expertise with creative vision to produce stunning visuals.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h4>Client-Centric</h4>
+        <p>Your vision is our priority. We listen carefully and work collaboratively to bring your ideas to life.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h4>Professional & Reliable</h4>
+        <p>Punctuality, reliability, and professionalism are at the core of everything we do.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">✨</div>
+        <h4>Attention to Detail</h4>
+        <p>From composition to editing, we obsess over every detail to ensure perfection.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🎬</div>
+        <h4>Innovative Approach</h4>
+        <p>We stay ahead of trends and continuously evolve our techniques and technology.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💝</div>
+        <h4>Passion Driven</h4>
+        <p>We genuinely love what we do, and that passion shines through in every project.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section about-cta">
+  <div class="container">
+    <h2>Let's Create Something Beautiful Together</h2>
+    <p>Ready to work with 3NStudioz? Get in touch to discuss your project.</p>
+    <a routerLink="/contact" class="btn btn-primary">Get Started</a>
+  </div>
+</section>

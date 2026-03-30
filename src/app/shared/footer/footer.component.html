@@ -1,0 +1,76 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- About Section -->
+        <div class="footer-section">
+          <h3>3NStudioz</h3>
+          <p>Capturing moments. Creating stories. Professional photography and videography services in Pretoria.</p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" title="Instagram">
+              <i class="icon">IG</i>
+            </a>
+            <a href="https://tiktok.com" target="_blank" rel="noopener" title="TikTok">
+              <i class="icon">TK</i>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" title="Facebook">
+              <i class="icon">FB</i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/portfolio">Portfolio</a></li>
+            <li><a routerLink="/services">Services</a></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a routerLink="/contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="footer-section">
+          <h4>Services</h4>
+          <ul>
+            <li><a routerLink="/services">Wedding Photography</a></li>
+            <li><a routerLink="/services">Event Coverage</a></li>
+            <li><a routerLink="/services">Portraits</a></li>
+            <li><a routerLink="/services">Videography</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section">
+          <h4>Get in Touch</h4>
+          <p class="contact-item">
+            <strong>Phone:</strong><br>
+            <a [href]="'tel:' + contactInfo.phone">{{ contactInfo.phone }}</a>
+          </p>
+          <p class="contact-item">
+            <strong>WhatsApp:</strong><br>
+            <a [href]="getWhatsAppLink()" target="_blank">Click to chat</a>
+          </p>
+          <p class="contact-item">
+            <strong>Location:</strong><br>
+            {{ contactInfo.location }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright -->
+      <div class="footer-bottom">
+        <p>&copy; {{ currentYear }} 3NStudioz. All rights reserved. | Photography & Videography Excellence</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a class="whatsapp-button" [href]="getWhatsAppLink()" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.995 1.515 9.879 9.879 0 003.552 19.102h.004c2.746 0 5.333-1.084 7.271-3.046a9.853 9.853 0 002.576-7.011 9.855 9.855 0 00-8.408-9.56zM12.04 0C5.396 0 .102 5.294.102 11.96c0 2.126.547 4.179 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.678 1.448h.005c6.554 0 11.89-5.335 11.892-11.893 0-3.176-1.237-6.167-3.48-8.477C18.184 1.236 15.257 0 12.04 0z"/>
+    </svg>
+  </a>
+</footer>
