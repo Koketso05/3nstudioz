@@ -49,8 +49,8 @@
 <!-- Lightbox -->
 <app-lightbox
   [isOpen]="lightboxOpen()"
-  [imageUrl]="filteredPortfolios[currentImageIndex()]?.image"
-  [imageTitle]="filteredPortfolios[currentImageIndex()]?.title"
+  [imageUrl]="filteredPortfolios[currentImageIndex()].image"
+  [imageTitle]="filteredPortfolios[currentImageIndex()].title"
   [currentIndex]="currentImageIndex()"
   [totalImages]="filteredPortfolios.length"
   (close)="closeLightbox()"

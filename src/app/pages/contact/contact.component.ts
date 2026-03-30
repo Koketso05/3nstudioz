@@ -12,7 +12,7 @@ import { ContactForm } from '../../models';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent implements OnInit {
-  contactInfo = this.contactService.getContactInfo();
+  contactInfo: any;
 
   form: ContactForm = {
     name: '',
@@ -37,7 +37,9 @@ export class ContactComponent implements OnInit {
 
   constructor(private contactService: ContactService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.contactInfo = this.contactService.getContactInfo();
+  }
 
   async submitForm(): Promise<void> {
     if (!this.isFormValid()) {

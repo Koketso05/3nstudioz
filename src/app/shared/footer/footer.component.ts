@@ -11,10 +11,12 @@ import { ContactService } from '../../services/contact.service';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  contactInfo = this.contactService.getContactInfo();
+  contactInfo: any;
   currentYear = new Date().getFullYear();
 
-  constructor(private contactService: ContactService) {}
+  constructor(private contactService: ContactService) {
+    this.contactInfo = this.contactService.getContactInfo();
+  }
 
   getWhatsAppLink(): string {
     return this.contactService.getWhatsAppLink();

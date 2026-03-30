@@ -14,7 +14,7 @@
       <div class="contact-form-wrapper">
         <h2>Send us a Message</h2>
 
-        <form [formGroup]="form" (ngSubmit)="submitForm()" class="contact-form"
+        <form (ngSubmit)="submitForm()" class="contact-form"
               *ngIf="!submitSuccess; else successMessage">
           <!-- Name Field -->
           <div class="form-group">
@@ -96,7 +96,7 @@
           <div class="info-content">
             <h4>WhatsApp</h4>
             <p>Quick chat for inquiries and bookings</p>
-            <a [href]="contactInfo.phone | slice:0:-10 | slice:1:''"
+            <a [href]="getWhatsAppLink()"
                target="_blank" rel="noopener" class="whatsapp-link">
               Click to chat on WhatsApp
             </a>
