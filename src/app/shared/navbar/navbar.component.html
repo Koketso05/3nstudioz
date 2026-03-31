@@ -2,13 +2,15 @@
   <div class="navbar-container">
     <!-- Logo -->
     <div class="navbar-logo">
-      <a routerLink="/" class="logo-text">3NStudioz</a>
+      <a routerLink="/" class="logo-text">
+        <img class="primary-logo" src="logo.png" height="45px" alt="3nstudioz">
+      </a>
     </div>
 
     <!-- Desktop Menu -->
     <ul class="nav-menu" [class.active]="isMobileMenuOpen()">
       <li class="nav-item">
-        <a routerLink="/" routerLinkActive="active" (click)="closeMobileMenu()" 
+        <a routerLink="/" routerLinkActive="active" (click)="closeMobileMenu()"
            [routerLinkActiveOptions]="{ exact: true }">Home</a>
       </li>
       <li class="nav-item">
